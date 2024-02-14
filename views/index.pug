@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  if messages.length
+    ul
+      each message in messages
+        li #{message.user}: #{message.text} -#{message.added}
+    a(href="/new") Add new message
+
+  else
+    p There are no messages.
